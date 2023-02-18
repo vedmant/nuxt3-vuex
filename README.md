@@ -1,4 +1,4 @@
-# nuxt3-vuex
+# nuxt3-vuex-module
 
 > Vuex stores feature for Nuxt3 
 
