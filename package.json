@@ -1,0 +1,27 @@
+{
+  "name": "nuxt3-vuex",
+  "version": "1.0.0",
+  "description": "Vuex support for Nuxt 3",
+  "main": "srt/module.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxi dev"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "nuxt3",
+    "vuex",
+    "store"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "glob": "^8.0.3",
+    "nuxt": "^3.0.0"
+  }
+}
