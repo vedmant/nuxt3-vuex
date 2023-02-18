@@ -11,7 +11,7 @@ function makeStore (storeModule, namespaces, alias) {
   const namespace = namespaces.shift()
 
   storeModule.modules[namespace] = storeModule.modules[namespace] || {}
-  storeModule.modules[namespace].alias = alias
+  storeModule.modules[namespace].alias = storeModule.modules[namespace].alias || alias
   storeModule.modules[namespace].modules = storeModule.modules[namespace].modules || {}
 
   return makeStore(storeModule.modules[namespace], namespaces, alias)
@@ -84,6 +84,9 @@ export const register = {
       `const VuexStore = ${VuexStoreStr}`,
       `export default VuexStore`,
     ].join('\n')
+
+    console.log(contents)
+
 
     addTemplate({
       filename: 'vuexStore.js',
