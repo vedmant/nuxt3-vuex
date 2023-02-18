@@ -6,6 +6,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
 
 # Runtime data
 pids
@@ -88,5 +89,3 @@ sw.*
 
 # Vim swap files
 *.swp
-
-cypress/screenshots

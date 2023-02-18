@@ -1,8 +1,8 @@
 {
-  "name": "nuxt3-vuex",
-  "version": "1.0.0",
+  "name": "nuxt3-vuex-module",
+  "version": "1.0.1",
   "description": "Vuex support for Nuxt 3",
-  "main": "srt/module.js",
+  "main": "src/module.js",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev"
