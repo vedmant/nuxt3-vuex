@@ -2,6 +2,8 @@
 
 > Vuex stores feature for Nuxt3 
 
+[![npm version](https://badge.fury.io/js/nuxt3-vuex-module.svg)](https://badge.fury.io/js/nuxt3-vuex-module)
+
 This should read all your `store` folder the same way as Nuxt 2 does.
 
 ```bash
