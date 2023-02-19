@@ -5,13 +5,14 @@ on:
     types: [published]
 
 jobs:
-  releaser:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: mmarchini-oss/npm-otp-publish@v0
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          npm_token: ${{ secrets.NPM_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_actor: ${{ github.actor }}
-          version_url: https://github.com/${{ github.repository }}/releases/tag/${{ steps.release.outputs.tag_name }}
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn publish --no-git-tag-version --new-version "${GITHUB_REF:11}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
