@@ -1,0 +1,17 @@
+name: Publish Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  releaser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mmarchini-oss/npm-otp-publish@v0
+        with:
+          npm_token: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_actor: ${{ github.actor }}
+          version_url: https://github.com/${{ github.repository }}/releases/tag/${{ steps.release.outputs.tag_name }}

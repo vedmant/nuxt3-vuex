@@ -85,9 +85,6 @@ export const register = {
       `export default VuexStore`,
     ].join('\n')
 
-    console.log(contents)
-
-
     addTemplate({
       filename: 'vuexStore.js',
       getContents: () => contents,
