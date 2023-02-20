@@ -6,6 +6,9 @@
 
 This should read all your `store` folder the same way as Nuxt 2 does.
 
+It reads `store` folder, supports nested modules and SSR.  
+It however doesn't support separated files `actions.js`, `mutations.js`, etc.
+
 ```bash
 yarn add nuxt3-vuex-module
 ```
