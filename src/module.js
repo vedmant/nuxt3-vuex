@@ -36,7 +36,7 @@ export const register = {
   vuexStores ({ fullStoreDir, exclude = [] }) {
     const imports = [], aliases = [], store = { modules: {} }
     let rootStore
-    const pattern = `${fullStoreDir}/**/*+(.mjs|.ts|.js)`
+    const pattern = `${fullStoreDir}/**/!(*.test)*+(.mjs|.ts|.js)`
     const storeDefinitionFiles = (glob.sync(pattern))
       .filter(file => ! exclude.includes(file))
 
