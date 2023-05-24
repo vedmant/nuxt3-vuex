@@ -4,7 +4,7 @@
   "description": "Vuex support for Nuxt 3",
   "main": "src/module.js",
   "type": "module",
-  "repository": "github:vedmant/nuxt3-vuex",
+  "repository": "github:gutsgusto/nuxt3-vuex",
   "scripts": {
     "dev": "nuxi dev"
   },
