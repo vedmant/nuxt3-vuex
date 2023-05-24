@@ -1,6 +1,6 @@
 import { existsSync } from 'fs'
 import { resolve } from 'path'
-import { defineNuxtModule, addPlugin, addImports, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, addImports, addTemplate, createResolver } from '@nuxt/kit'
 import glob from 'glob'
 
 function addModule (storeModule, namespaces, alias) {
@@ -91,9 +91,10 @@ export default defineNuxtModule({
 
     const fullStoreDir = resolve(nuxt.options.srcDir, storeDir)
     if (existsSync(fullStoreDir)) {
+      const { resolve } = createResolver(import.meta.url)
       register.vuexStores({ fullStoreDir, exclude })
       addPlugin({
-        src: resolve(__dirname, 'plugin.js'),
+        src: resolve('./plugin.js'),
       })
     }
   },
