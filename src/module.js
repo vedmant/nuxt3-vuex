@@ -56,7 +56,7 @@ export const register = {
         rootStore = alias
       } else {
         // Modules
-        const namespace = path.replace(/\.(js|mjs)$/, '')
+        const namespace = path.replace(/\.(js|mjs|ts)$/, '')
         const namespaces = namespace.split('/')
         addModule(store, namespaces, alias)
       }
