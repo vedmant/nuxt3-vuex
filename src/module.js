@@ -89,7 +89,11 @@ export default defineNuxtModule({
       exclude = [],
     } = moduleOptions
 
-    const fullStoreDir = resolve(nuxt.options.srcDir, storeDir)
+	let fullStoreDir = resolve(nuxt.options.srcDir, storeDir)
+	if (process.platform === 'win32') {
+		fullStoreDir = fullStoreDir.replace(/\\/g,'/')
+	}
+
     if (existsSync(fullStoreDir)) {
       const { resolve } = createResolver(import.meta.url)
       register.vuexStores({ fullStoreDir, exclude })
