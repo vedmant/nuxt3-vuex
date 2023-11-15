@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^9.1.1",
-    "glob": "^8.0.3",
+    "fast-glob": "^3.3.0",
     "nuxt": "^3.0.0"
   }
 }
