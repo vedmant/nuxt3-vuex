@@ -26,6 +26,7 @@
     "@types/mocha": "^9.1.1",
     "eslint": "^8.53.0",
     "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-n": "^16.3.1",
     "glob": "^8.0.3",
     "nuxt": "^3.0.0"
