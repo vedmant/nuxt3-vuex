@@ -6,7 +6,9 @@
   "type": "module",
   "repository": "github:vedmant/nuxt3-vuex",
   "scripts": {
-    "dev": "nuxi dev"
+    "dev": "nuxi dev",
+    "lint": "eslint  --ext .js,.ts,.vue --max-warnings=0 .",
+    "lint:fix": "eslint --ext .js,.ts,.vue . --fix"
   },
   "files": [
     "src"
@@ -22,6 +24,9 @@
   },
   "devDependencies": {
     "@types/mocha": "^9.1.1",
+    "eslint": "^8.53.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-n": "^16.3.1",
     "glob": "^8.0.3",
     "nuxt": "^3.0.0"
   }
