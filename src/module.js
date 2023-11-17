@@ -1,7 +1,7 @@
 import { existsSync } from 'fs'
 import { resolve } from 'path'
 import { defineNuxtModule, addPlugin, addImports, addTemplate, createResolver } from '@nuxt/kit'
-import glob from 'glob'
+import glob from 'fast-glob'
 
 function addModule (storeModule, namespaces, alias) {
   if (!namespaces.length) {
