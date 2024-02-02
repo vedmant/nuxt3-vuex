@@ -6,33 +6,29 @@ describe('vuex', () => {
     const store = useNuxtApp().$store
 
     expect(Object.keys(store._actions)).toEqual([
-      'auth/one',
-      'auth/two',
-      'merchant/one',
-      'merchant/two',
-      'merchant/orders/one',
-      'merchant/orders/two',
-      'merchant/catalog/one',
-      'merchant/catalog/two',
-      'merchant/catalog/bundles/one',
-      'merchant/catalog/bundles/two',
-      'merchant/catalog/categories/one',
-      'merchant/catalog/categories/two',
+      'auth/authOne',
+      'auth/authTwo',
+      'merchant/orders/merchantOrdersOne',
+      'merchant/orders/merchantOrdersTwo',
+      'merchant/catalog/merchantCatalogIndexOne',
+      'merchant/catalog/merchantCatalogIndexTwo',
+      'merchant/catalog/bundles/merchantCatalogBundlesOne',
+      'merchant/catalog/bundles/merchantCatalogBundlesTwo',
+      'merchant/catalog/categories/merchantCatalogCategoriesOne',
+      'merchant/catalog/categories/merchantCatalogCategoriesTwo',
     ])
 
     expect(Object.keys(store._mutations)).toEqual([
-      'auth/ONE',
-      'auth/TWO',
-      'merchant/ONE',
-      'merchant/TWO',
-      'merchant/orders/ONE',
-      'merchant/orders/TWO',
-      'merchant/catalog/ONE',
-      'merchant/catalog/TWO',
-      'merchant/catalog/bundles/ONE',
-      'merchant/catalog/bundles/TWO',
-      'merchant/catalog/categories/ONE',
-      'merchant/catalog/categories/TWO',
+      'auth/authONE',
+      'auth/authTWO',
+      'merchant/orders/merchantOrdersONE',
+      'merchant/orders/merchantOrdersTWO',
+      'merchant/catalog/merchantCatalogIndexONE',
+      'merchant/catalog/merchantCatalogIndexTWO',
+      'merchant/catalog/bundles/merchantCatalogBundlesONE',
+      'merchant/catalog/bundles/merchantCatalogBundlesTWO',
+      'merchant/catalog/categories/merchantCatalogCategoriesONE',
+      'merchant/catalog/categories/merchantCatalogCategoriesTWO',
     ])
   })
 })

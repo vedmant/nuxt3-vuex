@@ -4,21 +4,21 @@ export const state = () => ({
 })
 
 export const actions = {
-  async one ({ commit }) {
-    commit('ONE')
+  async merchantCatalogBundlesOne ({ commit }) {
+    commit('merchantCatalogBundlesONE')
   },
 
-  async two ({ commit }) {
-    commit('TWO')
+  async merchantCatalogBundlesTwo ({ commit }) {
+    commit('merchantCatalogBundlesTWO')
   },
 }
 
 export const mutations = {
-  ONE (state) {
+  merchantCatalogBundlesONE (state) {
     state.one = true
   },
 
-  TWO (state) {
+  merchantCatalogBundlesTWO (state) {
     state.two = true
   },
 }
