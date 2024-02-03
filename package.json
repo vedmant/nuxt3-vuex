@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "nuxi dev",
     "lint": "eslint  --ext .js,.ts,.vue --max-warnings=0 .",
-    "lint:fix": "eslint --ext .js,.ts,.vue . --fix"
+    "lint:fix": "eslint --ext .js,.ts,.vue . --fix",
+    "test": "vitest"
   },
   "files": [
     "src"
@@ -30,6 +31,9 @@
     "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-promise": "^6.1.1",
     "fast-glob": "^3.3.0",
-    "nuxt": "^3.0.0"
+    "happy-dom": "^13.3.8",
+    "nuxt": ">3.0.0",
+    "nuxt-vitest": "^0.11.5",
+    "vitest": "0.33.0"
   }
 }
