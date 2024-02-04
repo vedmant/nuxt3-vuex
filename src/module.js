@@ -11,8 +11,13 @@ function addModule (storeModule, namespaces, alias) {
   const namespace = namespaces.shift()
 
   storeModule.modules[namespace] = storeModule.modules[namespace] || {}
-  storeModule.modules[namespace].alias = storeModule.modules[namespace].alias || alias
   storeModule.modules[namespace].modules = storeModule.modules[namespace].modules || {}
+
+  const isFinalNamespace = namespaces.length === 0
+  if (isFinalNamespace) {
+    storeModule.modules[namespace].alias = alias
+    return
+  }
 
   return addModule(storeModule.modules[namespace], namespaces, alias)
 }
@@ -24,7 +29,7 @@ function makeModulesString (modules) {
   return '{' + entries.map(([key, val]) => {
     return `
       ${key}: {
-        ...${val.alias},
+        ${val.alias ? `...${val.alias},` : ''}
         namespaced: true,
         modules: ${makeModulesString(val.modules)}
       }
@@ -58,6 +63,10 @@ export const register = {
         // Modules
         const namespace = path.replace(/\.(js|mjs|ts)$/, '')
         const namespaces = namespace.split('/')
+        const isNamespaceIndexFile = namespaces[namespaces.length - 1] === 'index'
+        if (isNamespaceIndexFile) {
+          namespaces.pop()
+        }
         addModule(store, namespaces, alias)
       }
     })
