@@ -29,7 +29,7 @@ function makeModulesString (modules) {
   return '{' + entries.map(([key, val]) => {
     return `
       ${key}: {
-        ${val.alias ? `...${val.alias},` : ''}
+        ${val.alias ? `...${val.alias}.default ?? ${val.alias},` : ''}
         namespaced: true,
         modules: ${makeModulesString(val.modules)}
       }

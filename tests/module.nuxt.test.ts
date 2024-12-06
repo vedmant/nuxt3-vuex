@@ -8,6 +8,7 @@ describe('vuex', () => {
     expect(Object.keys(store._actions)).toEqual([
       'auth/authOne',
       'auth/authTwo',
+      'pages/pageOne',
       'merchant/orders/merchantOrdersOne',
       'merchant/orders/merchantOrdersTwo',
       'merchant/catalog/merchantCatalogIndexOne',
@@ -21,6 +22,7 @@ describe('vuex', () => {
     expect(Object.keys(store._mutations)).toEqual([
       'auth/authONE',
       'auth/authTWO',
+      'pages/pageONE',
       'merchant/orders/merchantOrdersONE',
       'merchant/orders/merchantOrdersTWO',
       'merchant/catalog/merchantCatalogIndexONE',
