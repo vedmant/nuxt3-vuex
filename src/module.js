@@ -28,7 +28,7 @@ function makeModulesString (modules) {
 
   return '{' + entries.map(([key, val]) => {
     return `
-      ${key}: {
+      '${key}': {
         ${val.alias ? `...${val.alias}.default ?? ${val.alias},` : ''}
         namespaced: true,
         modules: ${makeModulesString(val.modules)}
@@ -50,7 +50,7 @@ export const register = {
         .replace(fullStoreDir, '')
         .replace(/^\//g, '')
 
-      const nsp = path.replace(/(\/|\.js|\.mjs|\.ts)/g, '')
+      const nsp = path.replace(/(-|\/|\.js|\.mjs|\.ts)/g, '')
 
       const alias = nsp + 'VuexStore'
       imports.push({ from: f, name: '*', as: alias })
